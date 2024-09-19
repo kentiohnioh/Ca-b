@@ -1,0 +1,1736 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        /* Custom styles */
+        .section-content {
+            display: none;
+            /* Hidden by default */
+        }
+
+        .section-content.active {
+            display: block;
+            /* Show when active */
+        }
+
+        .nav-link {
+            cursor: pointer;
+            /* Indicate clickable items */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="bg_color">
+        <div class="container">
+            <a style=" text-shadow: 1px 2px black; color: white" class="navbar-brand fw-bold fs-3" href="#">PETE
+                EATS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- HOME, ABOUT,... -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-5">
+                        <a style="color: white" class="tag_nav nav-link active fw-bold fs-4" href="#"
+                            data-target="home">Home</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a style="color: white" class="tag_nav nav-link active fw-bold fs-4" href="#"
+                            data-target="menu">Menu</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a style="color: white" class="tag_nav nav-link active fw-bold fs-4" href="#"
+                            data-target="about">About</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a style="color: white" class="tag_nav nav-link active fw-bold fs-4" href="#"
+                            data-target="contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- ICON -->
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item position-relative me-2">
+                        <a class="nav-link fs-5" href="#"><i style="color: rgb(65, 65, 65);"
+                                class="fa-solid fa-heart"></i></a>
+                        <span class="position-absolute tagA rounded-pill top-0 start-100 translate-middle"
+                            style="color: white;">99+</span>
+                    </li>
+
+                    <li class="nav-item me-2">
+                        <a class="nav-link fs-5 " href="#"><i style="color: rgb(65, 65, 65)"
+                                class="fa-solid fa-user"></i></i></a>
+                    </li>
+                    <li class="nav-item position-relative " data-bs-toggle="modal" data-bs-target="#oderModal"
+                        onclick="show_order()">
+                        <a class="nav-link fs-5 fs-5" href="#"><i style="color: rgb(65, 65, 65)"
+                                class="fa-solid fa-cart-shopping"></i></a>
+                        <span id="number_shopping"
+                            class="position-absolute tagA rounded-pill top-0 start-100 translate-middle"
+                            style="color: white;">0</span>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- SECTION HOME -->
+<div class="section" id="home">
+        <!-- ===== MAIN BANNER ===== -->
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active position-relative">
+                    <img src="./pic/first main.jpg" class="d-block " alt="...">
+                    <div class="txt1 ">
+                        <h2><i>The Building Blocks of Life</i></h2>
+                        <p><i>Food is more than just something to satisfy your hunger. It's a complex mix of essential
+                                nutrients
+                                that your body absolutely needs to function. These nutrients can be broken down into two
+                                main
+                                categories: macronutrients and micronutrients. </i></p>
+                        <p><u><i>For more information about this visit...</i></u></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./pic/third main.jpg" class="d-block " alt="...">
+                    <div class="txt2">
+                        <h2>The Powerhouse of Health</h2>
+                        <p>Micronutrients, on the other hand, are needed in much smaller quantities, but they play a
+                            vital
+                            role in keeping you healthy. Vitamins and minerals fall under this category. They help
+                            regulate
+                            crucial bodily processes, from strengthening your immune system to ensuring proper nerve
+                            function. Think of them as the power source and control panel for your body's intricate
+                            machinery. </p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+</div>
+<!-- SECTION MENU -->
+    <div class="section" id="menu">
+    <!-- =====  OPTION IN MENU ====== -->
+    <div class="container my-5 mb-5">
+
+        <div class="text-center">
+            <div class="title mt-5 mb-5">
+                <h2 class="position-relative d-inline-block text-danger"
+                    style="font-weight: bold; text-shadow: 1px 2px 2px gray;">Menu</h2>
+            </div>
+            <button type="button" class="btn rounded-pill px-3 py-2 me-2 btn_out" id="btn_all">All</button>
+            <button type="button" class="btn rounded-pill px-3 py-2 me-2 btn_out" id="btn_cambodian">Cambodian
+                Foods</button>
+            <button type="button" class="btn rounded-pill px-3 py-2 me-2 btn_out" id="btn_drinks">Drinks</button>
+            <button type="button" class="btn rounded-pill px-3 py-2 me-2 btn_out" id="btn_offers">Special
+                Offers</button>
+        </div>
+
+    </div>
+    <!-- ===== CAMBODIAN FOODS ===== -->
+    <div class="container" id="cambodian_section">
+        <div class="title_1 mt-5 mb-4">
+            <h2 class="position-relative d-inline-block text-danger"
+                style="font-weight: bolder; text-shadow: 1px 2px 2px gray;">&nbsp;&nbsp;Cambodian Foods</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Authentic Green Curry.jpg" class="img-fluid" alt="...">
+                        <span class="best_sale rounded-pill start">Best Sale</span>
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-title text-center text-primary">Authentic Spicy Green Curry</h5>
+                        <p class="text-danger">$ 3.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Authentic Spicy Green Curry', '3.00', 
+                                './pic/Cambodian Foods/Authentic Green Curry.jpg')">Add to card
+                            </button>
+
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Cambodian Pin Noodles Stire Fry.jpg" class="img-fluid"
+                            alt="...">
+                        <span class="best_sale rounded-pill start">Best Sale</span>
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Cambodian Pin Noodles Fry</h5>
+                        <p class="text-danger ">$ 3.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Cambodian Pin Noodles Fry', '3.00', 
+                                './pic/Cambodian Foods/Cambodian Pin Noodles Stire Fry.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Carmelized pork belly soup.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Carmelized Pork Belly Soup</h5>
+                        <p class="text-danger ">$ 2.50</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Carmelized Pork Belly Soup', '2.50', 
+                                './pic/Cambodian Foods/Carmelized pork belly soup.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Chicken Congee.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Cambodian Chicken Congee</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Cambodian Chicken Congee', '2.00', 
+                                './pic/Cambodian Foods/Chicken Congee.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Chicken Soup.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Non-Vegies Chicken Soup</h5>
+                        <p class="text-danger ">$ 2.50</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Non-Vegetables Chicken Soup', '2.50', 
+                                './pic/Cambodian Foods/Chicken Soup.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Chicken Wonton Noodles Soup.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Chicken Noodles Soup</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Chicken Noodles Soup', '2.00', 
+                                './pic/Cambodian Foods/Chicken Wonton Noodles Soup.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Coconut Lime Soup.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Ordinary Coconut Lime Soup</h5>
+                        <p class="text-danger ">$ 3.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Ordinary Coconut Lime Soup', '3.00', 
+                                './pic/Cambodian Foods/Coconut Lime Soup.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Egg Rolls.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary"> Deep Fried Egg Rolls</h5>
+                        <p class="text-danger ">$ 1.75</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star "></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Deep Fried Egg Roll', '1.75', 
+                                './pic/Cambodian Foods/Egg Rolls.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Lemongrass and Caramelized Pork Belly Pasta.jpg"
+                            class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Caramelized Pork Belly Pasta</h5>
+                        <p class="text-danger ">$ 2.25</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Caramelized Pork Belly Pasta', '2.25', 
+                                './pic/Cambodian Foods/Lemongrass and Caramelized Pork Belly Pasta.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Prawn and Squash balls Soup.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Prawn and Squash balls Soup</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star "></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Prawn and Squash balls Soup', '2.00', 
+                                './pic/Cambodian Foods/Prawn and Squash balls Soup.jpg')">Add to card
+                            </button>
+                            <!-- Butto
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Spicy Basil Chili Udon Noodle Stir Fry.jpg" class="img-fluid"
+                            alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Basil Chili Noodle Stir Fry</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Basil Chili Noodle Stir Fry', '2.00', 
+                                './pic/Cambodian Foods/Spicy Basil Chili Udon Noodle Stir Fry.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Cambodian Foods/Wonton Noodle Soup.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Best Wonton Noodle Soup</h5>
+                        <p class="text-danger ">$ 2.25</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star "></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Best Wonton Noodle Soup', '2.25', 
+                                './pic/Cambodian Foods/Wonton Noodle Soup.jpg')">Add to card
+                            </button>
+                            <!-- Button trigger modal -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="border-0 btn btn-none">
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon "></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-warning fs-4 fw-bold" id="exampleModalLabel">
+                                                Save alert!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-primary fs-5 fw-bold">
+                                            You added menu to Favourite!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary "
+                                                data-bs-dismiss="modal">Done</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <button class="btn btn-link go-up" onclick="scrollToTop()">Go Up</button>
+    <!-- ===== DRINKS ===== -->
+    <div class="container" id="drinks_section">
+        <div class="title_1 mt-5 mb-4">
+            <h2 class="position-relative d-inline-block text-danger"
+                style="font-weight: bolder; text-shadow: 1px 2px 2px gray;">&nbsp;&nbsp;Drinks</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Foam Cold Brew.PNG" class="img-fluid" alt="...">
+                        <span class="best_sale rounded-pill start">Best Sale</span>
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Foam Cold Brew</h5>
+                        <p class="text-danger ">$ 2.50</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Foam Cold Brew', '2.50', 
+                                './pic/Drinks/Foam Cold Brew.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Lime Margarita.PNG" class="img-fluid" alt="...">
+                        <span class="best_sale rounded-pill start">Best Sale</span>
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Lime Margarita</h5>
+                        <p class="text-danger ">$ 2.25</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Lime Margarita', '2.25', 
+                                './pic/Drinks/Lime Margarita.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Matcha Latte.PNG" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Matcha Latte</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star "></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Matcha Latte', '2.00', 
+                                './pic/Drinks/Matcha Latte.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Mixed Fruits Frappe.PNG" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Fruits Mocktail</h5>
+                        <p class="text-danger ">$ 3.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Fruits Mocktail', '3.00', 
+                                './pic/Drinks/Mixed Fruits Frappe.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Red Tea.PNG" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Red Tea</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Red Tea', '2.00', 
+                                './pic/Drinks/Red Tea.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Salted Maple Iced Coffee.PNG" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Maple Iced Coffee</h5>
+                        <p class="text-danger ">$ 2.00</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star "></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Maple Iced Coffee', '2.00', 
+                                './pic/Drinks/Salted Maple Iced Coffee.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Strawberry Sago.PNG" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Strawberry Sago</h5>
+                        <p class="text-danger ">$ 2.50</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star "></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Strawberry Sago', '2.50', 
+                                './pic/Drinks/Strawberry Sago.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm ">
+                    <div class="card-top position-relative">
+                        <img src="./pic/Drinks/Taipei Boba Pearls.PNG" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body text-center my-2 py-1">
+                        <h5 class="card-titl text-center text-primary">Taipei Boba Pearls</h5>
+                        <p class="text-danger ">$ 2.25</p>
+                        <p><i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star text-warning"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </p>
+                        <div class="button btn_card">
+                            <button type="button" class="btn btn-primary btn_size" onclick="add_to_card('Taipei Boba Pearls', '2.25', 
+                                './pic/Drinks/Taipei Boba Pearls.PNG')">Add to card
+                            </button>
+                            <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== SPECIAL OFFER ===== -->
+    <div class="container" id="offers_section">
+        <div class="title_1 mt-5 mb-4">
+            <h2 class="position-relative d-inline-block text-danger"
+                style="font-weight: bolder; text-shadow: 1px 2px 2px gray;"" >&nbsp;&nbsp;Special Offer</h2>
+        </div>
+        <div class=" row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 pb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-top position-relative">
+                            <img src="./pic/Special Offer/Cambodian Donut.jpg" class="img-fluid" alt="...">
+                        </div>
+                        <div class="card-body text-center my-2 py-1">
+                            <h5 class="card-title text-center text-primary">Cambodian Donuts</h5>
+                            <p>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </p>
+                            <div class="button btn_card">
+                                <button type="button" class="btn btn-primary btn_size"
+                                    onclick="add_special_offer_to_cart('Cambodian Donuts', './pic/Special Offer/Cambodian Donut.jpg')">Add
+                                    to card
+                                </button>
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                    <div class="card shadow-sm ">
+                        <div class="card-top position-relative">
+                            <img src="./pic/Special Offer/meatballs.jpg" class="img-fluid" alt="...">
+                        </div>
+                        <div class="card-body text-center my-2 py-1">
+                            <h5 class="card-titl text-center text-primary">Meatballs</h5>
+                            <p><i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </p>
+                            <div class="button btn_card">
+                                <button type="button" class="btn btn-primary btn_size"
+                                    onclick="add_special_offer_to_cart('Meatballs', './pic/Special Offer/meatballs.jpg')">Add
+                                    to card
+                                </button>
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                    <div class="card shadow-sm ">
+                        <div class="card-top position-relative">
+                            <img src="./pic/Special Offer/Mango Sticky Rice.jpg" class="img-fluid" alt="...">
+                        </div>
+                        <div class="card-body text-center my-2 py-1">
+                            <h5 class="card-titl text-center text-primary">Mango Sticky Rice</h5>
+                            <p><i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </p>
+                            <div class="button btn_card">
+                                <button type="button" class="btn btn-primary btn_size"
+                                    onclick="add_special_offer_to_cart('Mango Sticky Rice', './pic/Special Offer/Mango Sticky Rice.jpg')">Add
+                                    to card
+                                </button>
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                    <div class="card shadow-sm ">
+                        <div class="card-top position-relative">
+                            <img src="./pic/Special Offer/Sweet Rice Balls.jpg" class="img-fluid" alt="...">
+                        </div>
+                        <div class="card-body text-center my-2 py-1">
+                            <h5 class="card-titl text-center text-primary">Sweet Rice Balls</h5>
+                            <p><i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </p>
+                            <div class="button btn_card">
+                                <button type="button" class="btn btn-primary btn_size"
+                                    onclick="add_special_offer_to_cart('Sweet Rice Balls', './pic/Special Offer/Sweet Rice Balls.jpg')">Add
+                                    to card
+                                </button>
+                                <i class="fa-solid fa-heart fs-5 text-danger heart_icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </div>
+<!-- SECTION ABOUT -->
+<div class="section" id="about">
+    <!-- ===== ABOUT ===== -->
+    <div class="container">
+        <div class="row">
+            <h3 class="mb-3 mt-4 fw-bold text-shadow text-danger"
+                style="font-weight: bolder; text-shadow: 1px 2px 2px gray;">꧁ About Pete Eats ꧂</h3>
+            <!-- // FIRST INFO -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm">
+                    <div class="card ">
+                        <img src="./pic/about him/about him 1.jpg" class="img-fluid rounded" alt="...">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#AboutHim1">
+                            View more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="AboutHim1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text_AboutHim1 fw-bold text-shadow"
+                                            style="color: rgb(157, 0, 255); font-size: 26px; " id="exampleModalLabel">
+                                            Let's cook
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col">
+                                            <div class="card shadow-sm ">
+                                                <div class="card-top">
+                                                    <img src="./pic/about him/about him 1.jpg" class="img-fluid w-100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="card-body my-2 py-1">
+                                                    <p>I’m so excited to share with you! <br>
+                                                        <br>
+                                                        * The PRE-Sale of my book will be available “APRIL 18, 2021”. I
+                                                        will announce it the day of too. There will only be a limited
+                                                        quantity. <br>
+                                                        <br>
+                                                        * The book includes over 50+ recipes. More than 75% of the book
+                                                        has photos to go with it. <br>
+                                                        <br>
+                                                        * I will be offering merch and a portion of the proceeds will go
+                                                        to an AAPI organization in order to #stopasianhate <br>
+                                                        <br>
+                                                        The name of the cookbook is “Let’s Cook! : A Taste of Home” I
+                                                        named this book “A Taste of Home” because I invite you to join
+                                                        me and experience a taste of my home in the comfort of yours. I
+                                                        have included over 15 + recipes that are curated from my mom and
+                                                        family. <br>
+                                                        <br>
+                                                        For this cookbook, I hope you discover that food is universal
+                                                        and has the ability to connect us all. <br>
+                                                        <br>
+                                                        Thank you for your love and support! Now, Let’s cook!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn"
+                                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 10px 20px; border: none; border-radius: 5px;"
+                                            data-bs-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // SECOND INFO -->
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6col-12 pb-4">
+                <div class="card shadow-sm">
+                    <div class="card ">
+                        <img src="./pic/about him/about him 2.jpg" class="img-fluid rounded position-relative "
+                            alt="...">
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                            data-bs-target="#AboutHim2">
+                            View more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="AboutHim2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title fw-bold text-shadow"
+                                            style="color: rgb(157, 0, 255); font-size: 26px; " id="exampleModalLabel">
+                                            Let's cook
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col">
+                                            <div class="card shadow-sm ">
+                                                <div class="card-top">
+                                                    <img src="./pic/about him/about him 2.jpg" class="img-fluid w-100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="card-body my-2 py-1">
+                                                    <p>I’m so excited to share with you! <br>
+                                                        <br>
+                                                        * The PRE-Sale of my book will be available “APRIL 18, 2021”. I
+                                                        will announce it the day of too. There will only be a limited
+                                                        quantity. <br>
+                                                        <br>
+                                                        * The book includes over 50+ recipes. More than 75% of the book
+                                                        has photos to go with it. <br>
+                                                        <br>
+                                                        * I will be offering merch and a portion of the proceeds will go
+                                                        to an AAPI organization in order to #stopasianhate <br>
+                                                        <br>
+                                                        The name of the cookbook is “Let’s Cook! : A Taste of Home” I
+                                                        named this book “A Taste of Home” because I invite you to join
+                                                        me and experience a taste of my home in the comfort of yours. I
+                                                        have included over 15 + recipes that are curated from my mom and
+                                                        family. <br>
+                                                        <br>
+                                                        For this cookbook, I hope you discover that food is universal
+                                                        and has the ability to connect us all. <br>
+                                                        <br>
+                                                        Thank you for your love and support! Now, Let’s cook!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn"
+                                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 10px 20px; border: none; border-radius: 5px;"
+                                            data-bs-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== NEW ARRIVALS ===== -->
+    <div class="container">
+        <h3 class="text-shadow my-4 text-danger " style="font-weight: bolder; text-shadow: 1px 2px 2px gray;"> 𓌉◯𓇋 New
+            Arrival ✧₊⁺ </h3>
+        <div class="row my-4">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-5">
+                        <img class="w-100 rounded-pill img_shadow1" src="./pic/More about/1.jpg" alt="">
+                    </div>
+                    <div class="col-7">
+                        <h5 class="text-primary">Dumplings</h5>
+                        <p>🥟🥢</p>
+                        <p style="font-weight: bold; color: #ff1500;">$ 3.25</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn_size1" data-bs-toggle="modal"
+                            data-bs-target="#NewArrival1">
+                            View more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="NewArrival1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-primary" id="exampleModalLabel"
+                                            style="font-weight: bold;">Dumplings</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6"><img src="./pic/More about/1.jpg" class="w-100 rounded "
+                                                    alt=""></div>
+                                            <div class="col-6">
+                                                <p>Don’t forget to eat plenty of wontons/dumplings for good fortune and
+                                                    prosperity. <br> <br> It is said they also bring plenty of comfort
+                                                    and hope. <br><br> Wishing you all the best new year! With lots of
+                                                    growth and change for the better.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn"
+                                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 7.5px 15px; font-size: 0.75em; border: none; border-radius: 3.75px;"
+                                            data-bs-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-5">
+                        <img class="w-100 rounded-pill img_shadow1" src="./pic/More about/2.jpg" alt="">
+                    </div>
+                    <div class="col-7">
+                        <h5 class="text-primary">Racha Wings</h5>
+                        <p>🍗🍖</p>
+                        <p style="font-weight: bold; color: #ff1500;">$ 3.25</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn_size1" data-bs-toggle="modal"
+                            data-bs-target="#NewArrival2">
+                            View more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="NewArrival2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-primary" id="exampleModalLabel"
+                                            style="font-weight: bold; ">Racha Wings</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6"><img src="./pic/More about/2.jpg" class="w-100 rounded "
+                                                    alt=""></div>
+                                            <div class="col-6">
+                                                <p>Hear me out, this is probably one of my best wing sauces I have
+                                                    recipe tested not only in its simplicity but flavor.
+                                                    <br><br>
+                                                    If you like a sweet and spicy flavor profile with a little bit of
+                                                    tang. Give this a try!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn"
+                                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 7.5px 15px; font-size: 0.75em; border: none; border-radius: 3.75px;"
+                                            data-bs-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-5">
+                        <img class="w-100 rounded-pill img_shadow1" src="./pic/More about/3.jpg" alt="">
+                    </div>
+                    <div class="col-7">
+                        <h5 class="text-primary">Pork Skewers</h5>
+                        <p>🥓🍢</p>
+                        <p style="font-weight: bold; color: #ff1500;">$ 3.25</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn_size1" data-bs-toggle="modal"
+                            data-bs-target="#NewArrival3">
+                            View more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="NewArrival3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-primary" style="font-weight: bold;"
+                                            id="exampleModalLabel">BBQ Pork Skewers</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6"><img src="./pic/More about/3.jpg" class="w-100 rounded "
+                                                    alt=""></div>
+                                            <div class="col-6">
+                                                <p>It’s around that time where we ring in the new years for Songkran and
+                                                    the seasons of harvest. This is a super popular street food and
+                                                    usually a must during New Years.
+                                                    <br><br>
+                                                    If you never had it, it’s aromatic, sweet, and savory.
+                                                    <br><br>
+                                                    There is a variety of ways to make it. This is mine 👍🏽
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn"
+                                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 7.5px 15px; font-size: 0.75em; border: none; border-radius: 3.75px;"
+                                            data-bs-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-5">
+                        <img class="w-100 rounded-pill img_shadow1" src="./pic/More about/4.jpg" alt="">
+                    </div>
+                    <div class="col-7">
+                        <h5 class="text-primary">Garlic Shrimp </h5>
+                        <p>🧄🍤</p>
+                        <p style="font-weight: bold; color: #ff1500;">$ 3.25</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn_size1" data-bs-toggle="modal"
+                            data-bs-target="#NewArrival4">
+                            View more
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="NewArrival4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-primary" style="font-weight: bold;"
+                                            id="exampleModalLabel">Garlic Shrimp</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6"><img src="./pic/More about/4.jpg" class="w-100 rounded "
+                                                    alt=""></div>
+                                            <div class="col-6">
+                                                <p>Don’t forget to eat plenty of wontons/dumplings for good fortune and
+                                                    prosperity. <br> <br> It is said they also bring plenty of comfort
+                                                    and hope. <br><br> Wishing you all the best new year! With lots of
+                                                    growth and change for the better.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn"
+                                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 7.5px 15px; font-size: 0.75em; border: none; border-radius: 3.75px;"
+                                            data-bs-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- ===== EXPRESSION ===== -->
+    <div class="expression text-center text-shadow py-4">
+        <h4>⋆🍂We are so excited for your presence here!𓍯𓂃</h4>
+        <h5>Thank you for visitng our website!࿐ ࿔* </h5>
+    </div>
+</div>
+<!-- SECTION CONTACT -->
+<div class="section" id="contact">
+    <!-- ===== FOOTER ===== -->
+    <div class="container-fluid con_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 footer-item">
+                    <h4 class="text_color fw-bold">Food</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim impedit autem
+                        deserunt vitae aliquam eveniet beatae iste, porro blanditiis sed, sapiente quo excepturi quod
+                        non.</p>
+                    <p class="icon_footer text-muted">
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 footer-item">
+                    <h4 class="text_color fw-bold">Address</h4>
+                    <p class="text-muted">
+                        <i class="fa-solid fa-location-dot"></i> &nbsp; St. 110, Daun Penh, Phnom Penh.
+                    </p>
+                    <p class="text-muted">
+                        <i class="fa-solid fa-phone"></i> &nbsp; 855 93 728 728
+                    </p>
+                    <p class="text-muted">
+                        <i class="fa-solid fa-envelope"></i> &nbsp; phearomyeou@gmail.com
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 footer-item">
+                    <h4 class="text_color fw-bold">Quick Links</h4>
+                    <p class="text-muted"> >&nbsp; About Us</p>
+                    <p class="text-muted"> >&nbsp; Contact Us</p>
+                    <p class="text-muted"> >&nbsp; Terms & Condition</p>
+                    <p class="text-muted"> >&nbsp; Our Services</p>
+                    <p class="text-muted"> >&nbsp; Support</p>
+                </div>
+            </div>
+        </div>
+        <style>
+            .con_bg {
+                width: 100%;
+                height: auto;
+                background-color: rgb(0, 0, 0);
+                padding: 20px 0;
+            }
+
+            .text_color {
+                color: rgb(189, 189, 189);
+                margin-bottom: 20px;
+                font-size: 25px;
+            }
+
+            .icon_footer i {
+                font-size: 25px;
+                margin-right: 15px;
+            }
+
+            .footer-item {
+                margin-bottom: 20px;
+            }
+
+
+            @media (max-width: 992px) {
+                .text_color {
+                    font-size: 20px;
+                }
+
+                .icon_footer i {
+                    font-size: 20px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .text_color {
+                    font-size: 18px;
+                }
+
+                .icon_footer i {
+                    font-size: 18px;
+                    margin-right: 10px;
+                }
+
+                .footer-item {
+                    text-align: center;
+                }
+            }
+        </style>
+
+
+        <!-- The Modal -->
+        <div class="modal" id="oderModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">My Oder</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div id="oder_details">
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn"
+                            style="background: linear-gradient(to right, #ff1500, #b00000e0); color: white; padding: 7.5px 15px; font-size: 0.75em; border: none; border-radius: 3.75px;"
+                            data-bs-dismiss="modal">Close
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var orders = [];
+    var special_offer_added = false; 
+
+    // Function to add a regular item to the cart
+    function add_to_card(food_name, price, image_url) {
+        // Check if special offer is being added
+        if (food_name === 'Cambodian Donuts') {
+            alert('Please use the special offer button to add this item.');
+            return;
+        }
+
+        let el = document.getElementById("number_shopping");
+        let added = el.innerHTML;
+        added = parseFloat(added) + 1;
+        el.innerHTML = added;
+
+        // Check if existing order exists
+        let exist = false;
+        for (let order of orders) {
+            if (order.name === food_name) {
+                order.number_of_order += 1;
+                exist = true;
+                break;
+            }
+        }
+
+        if (!exist) {
+            let objOrder = {}; 
+            objOrder.name = food_name;
+            objOrder.price = price;
+            objOrder.number_of_order = 1;
+            objOrder.image_url = image_url; 
+            orders.push(objOrder); 
+        }
+    }
+
+    // Function to add a special offer item to the cart (only one per person)
+    function add_special_offer_to_cart(food_name, image_url) {
+        if (special_offer_added) {
+            alert('Special offer item can only be added once.');
+            return;
+        }
+
+        let el = document.getElementById("number_shopping");
+        let added = el.innerHTML;
+        added = parseFloat(added) + 1;
+        el.innerHTML = added;
+
+        // Create a new order object for the special offer item
+        let objOrder = {}; 
+        objOrder.name = food_name;
+        objOrder.price = 'Free'; 
+        objOrder.number_of_order = 1;
+        objOrder.image_url = image_url; 
+        orders.push(objOrder); 
+
+        special_offer_added = true; 
+    }
+
+    // Function to remove one order from the cart
+    function remove_one_order(index) {
+        if (index >= 0 && index < orders.length) {
+            let order = orders[index];
+            if (order.number_of_order > 1) {
+                order.number_of_order -= 1;
+            } else {
+                // Remove the order if the quantity is 1
+                orders.splice(index, 1);
+            }
+
+            // Update the number of shopping items
+            let el = document.getElementById("number_shopping");
+            let added = el.innerHTML;
+            added = parseFloat(added) - 1;
+            el.innerHTML = added;
+
+            // Re-render the order list
+            show_order();
+        }
+    }
+
+    // Function to display the order
+    function show_order() {
+        let str_html = "";
+        let total_price = 0; 
+
+        for (let i = 0; i < orders.length; i++) {
+            let order = orders[i];
+            let order_total = order.price === 'Free' ? 0 : parseFloat(order.price) * order.number_of_order;
+            total_price += order_total;
+
+            str_html += `
+        <div class="order-item">
+            <img class="order-image" src="${order.image_url}" alt="${order.name}" />
+            <div class="order-details">
+                <h3 class="order-title">${order.name}</h3>
+                <p class="order-price">${order.price === 'Free' ? 'Free' : `Price: $${order.price}`}</p>
+                <p class="order-count">
+                    Number of orders: ${order.number_of_order}
+                    <button type="button" class="btn btn-remove" onclick="remove_one_order(${i})">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </p>
+            </div>
+        </div>
+        `;
+        }
+
+        // Add total price to the HTML
+        str_html += `
+    <div class="order-total">
+        <h3>Total Price: $${total_price.toFixed(2)}</h3>
+    </div>
+    `;
+
+        if (orders.length > 0) {
+            $('#oder_details').html(str_html);
+        } else {
+            $('#oder_details').html("No Order!!!");
+        }
+    }
+    // ============ HEADER OPTIONS
+    document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        const targetId = this.getAttribute('data-target'); 
+        const targetElement = document.getElementById(targetId); 
+        
+        // Scroll to the target section
+        targetElement.scrollIntoView({
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    });
+});
+
+    // ============ MENU OPTIONS
+    document.getElementById('btn_all').addEventListener('click', function () {
+        // Scroll to each section one by one
+        const sections = ['cambodian_section', 'drinks_section', 'offers_section'];
+        let delay = 0;
+
+        sections.forEach((sectionId, index) => {
+            setTimeout(() => {
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            }, delay);
+            delay += 1000; 
+        });
+    });
+
+    document.getElementById('btn_cambodian').addEventListener('click', function () {
+        document.getElementById('cambodian_section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('btn_drinks').addEventListener('click', function () {
+        document.getElementById('drinks_section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('btn_offers').addEventListener('click', function () {
+        document.getElementById('offers_section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+
+    // Function to scroll to the top
+    function scrollToTop() {
+        window.scrollTo({ top: 650, behavior: 'smooth' });
+    }
+
+
+
+</script>
+
+</html>
